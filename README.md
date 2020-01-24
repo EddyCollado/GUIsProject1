@@ -1,3 +1,1 @@
-Project 1
-
-Party Calculator
+Making changes to readme file.
