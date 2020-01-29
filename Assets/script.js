@@ -1,4 +1,6 @@
 $( document ).ready(function() {
+    $('select').formSelect();
+    
     var clientId = "332c5e1a03234f338379231dadc0809c";
     var redirectUri = window.location.href;
     var authorizationToken = "Bearer "; //this returns in the url after login
