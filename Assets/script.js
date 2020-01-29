@@ -17,9 +17,7 @@ $( document ).ready(function() {
     //http-server -p 8080
 
     function getAuthorizationToken(){
-        if (authorizationToken === "Bearer "){
-            console.log("no token")
-        } else {
+
         var returnedAuthorizationToken = location.hash.substr(1);
         authorizationToken = "Bearer "+returnedAuthorizationToken.substring(returnedAuthorizationToken.indexOf("=")+1,returnedAuthorizationToken.indexOf("&"));
         console.log(authorizationToken);
@@ -33,7 +31,7 @@ $( document ).ready(function() {
                 console.log(data);
             }
         });
-    }
+    
     }
     getAuthorizationToken();
 
