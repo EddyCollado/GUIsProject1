@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  main {
+    flex: 1 0 auto;
+  }
+.card .card-content .card-title  {
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+.nav-wrapper {
+    background-color: rgb(85, 84, 84);
+}
+.page-footer {
+    background-color: rgb(85, 84, 84);
+    padding-top: 0px;
+}
