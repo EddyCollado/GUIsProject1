@@ -39,6 +39,8 @@ $( document ).ready(function() {
 
     mixButton.on("click",function(){
         getAuthorizationToken();
+        var selected = $("#form-options").val();
+        console.log("item selected",selected);
         console.log("this");
     $.ajax({
         url: "https://api.spotify.com/v1/search?q="+spotifyQuery+"&type="+spotifyCat,
