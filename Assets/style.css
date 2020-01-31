@@ -19,3 +19,10 @@ p {
     background-color: rgb(85, 84, 84);
     padding-top: 0px;
 }
+
+#cocktail-recipe{
+    color: black;
+}
+.ingredient {
+    color: black
+}
