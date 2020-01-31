@@ -32,23 +32,23 @@
                     <select id="form-options">
                       <option value="" disabled selected>Choose your party style</option>
 
-                      <option value="Hoe Down" id="hoe-down">Hoe Down</option>
-                      <option value="Totally Radical" id="tot-rad">Totally Radical</option>
-                      <option value="Geek Night" id="geek">Geek Night</option>
-                      <option value="Basic Bitch" id="basic-bitch">Basic Bitch</option>
-                      <option value="pre-game" id="pre-game">Pre-Gaming</option>
-                      <option value="night-in" id="night-in">Night-in</option>
-                      <option value="porch-sit" id="porch-sit">Porch Sitting</option>
-                      <option value="dumped" id="dumped">So Ya Got Dumped</option>
-                      <option value="coding" id="coding">Mad Coding</option>
-                      <option value="minecraft" id="minecraft">Mine All Day</option>
-                      <option value="hungouver" id="hungover">Hungover AF</option>
-                      <option value="bbq" id="bbq">Summer BBQ</option>
-                      <option value="rager" id="rager">Rager</option>
-                      <option value="girls" id="girls">Girl's Night</option>
-                      <option value="dungeons" id="dungeons">Dungeons & Dragons</option>
-                      <option value="guys" id="guys">Guys Night</option>
-                      <option value="lonely" id="lonely">Party of 1</option>
+                      <option value="0" id="hoe-down">Hoe Down</option>
+                      <option value="1" id="tot-rad">Totally Radical</option>
+                      <option value="2" id="geek">Geek Night</option>
+                      <option value="3" id="basic-bitch">Basic Bitch</option>
+                      <option value="4" id="pre-game">Pre-Gaming</option>
+                      <option value="5" id="night-in">Night-in</option>
+                      <option value="6" id="porch-sit">Porch Sitting</option>
+                      <option value="7" id="dumped">So Ya Got Dumped</option>
+                      <option value="8" id="coding">Mad Coding</option>
+                      <option value="9" id="minecraft">Mine All Day</option>
+                      <option value="10" id="hungover">Hungover AF</option>
+                      <option value="11" id="bbq">Summer BBQ</option>
+                      <option value="12" id="rager">Rager</option>
+                      <option value="13" id="girls">Girl's Night</option>
+                      <option value="14" id="dungeons">Dungeons & Dragons</option>
+                      <option value="15" id="guys">Guys Night</option>
+                      <option value="16" id="lonely">Party of 1</option>
 
                     </select>
                     <label>Pick your party!</label>
@@ -60,76 +60,84 @@
                     <label for="email">Size of party?</label>
                   </div>
                 </div>
-                <a class="waves-effect waves-light btn-large"><i class="material-icons left" id="mix-button">Mix!</i>button</a>    
+                <a class="waves-effect waves-light btn-large"><i class="material-icons left" id="mix-button">MIX!</i>button</a>    
             </div>  
               </form>
             </div>
           </div>
         </div>
-            <button id="spotify-auth">Spotify</button>
+            
             <div class="col s9">
               <!-- Teal page content  -->
               <div id="container">
                 <div class="row">
                     <div class="col s12">
                       <div class="card blue-grey darken-1">
-    
-                        <div class="card-content white-text">
+                        <button class="btn waves-effect waves-light" id="spotify-auth"> Authorize Spotify</button>
+                        <div class="card-content white-text hide" id="recipe-card">
                           <div class="card col s6 offset-s3" id="cocktail-list">
                             <div class="card-image waves-effect waves-block waves-light">
-                              <img class="activator" src="#" id="cocktail-img">
+                              <img class="activator" id="cocktail-image">
                             </div>
                             <div class="card-content">
-                              <span class="card-title activator grey-text text-darken-4" id="cocktail-title">Cocktail Recipe<i class="material-icons right"></i></span>
-                              <p><a href="#">This is a link</a></p>
+                              <span class="card-title activator grey-text text-darken-4" id="cocktail-title"><i class="material-icons right"></i></span>
+                              <p><a id="drink-glass"></a></p>
                             </div>
                             <div class="card-reveal">
-                              <span class="card-title grey-text text-darken-4" id="cocktail-name">Card Title<i class="material-icons right">close</i></span>
-                              <p id="cocktail-recipe">Here is some more information about this product that is only revealed once clicked on.</p>
+                              <span class="card-title grey-text text-darken-4" id="cocktail-name">Recipe<i class="material-icons right">close</i></span>
+                                <ul class="collection" id="recipe-list">
+                              </ul>
+                              <p id="cocktail-recipe"></p>
                             </div>
                           </div>
                         </div>
                         <br>
                       
                           <br>
-                          <div class="card-content white-text">
+                          <div class="card-content white-text hide" id="playlist-cards">
                             <div class="row">
                               <div class="col s4 m4">
                                 <div class="card blue-grey darken-1">
+                                  <div class="card-image">
+                                    <img id="playlist-one-image">
+                                  </div>
                                   <div class="card-content white-text" id="playlist1">
                                     <span class="card-title" id="playlist-one-title">Playlist#1</span>
                                     <p id="playlist-one-desc">I am a very simple card. I am good at containing small bits of information.
                                     I am convenient because I require little markup to use effectively.</p>
                                   </div>
                                   <div class="card-action">
-                                    <a href="#" id="playlist-one-link">This is a link</a>
-                                    <a href="#">This is a link</a>
+                                    <a href="#" id="playlist-one-link" target="_blank">Spotify Link</a>
                                   </div>
                                 </div>
                               </div>
                               <div class="col s4 m4">
                                 <div class="card blue-grey darken-1">
+                                  <div class="card-image">
+                                    <img id="playlist-two-image">
+                                  </div>
                                   <div class="card-content white-text" id="playlist2">
                                     <span class="card-title" id="playlist-two-title">Playlist#2</span>
-                                    <p id="playlist-two-desc">I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.</p>
+                                    <p id="playlist-two-desc"></p>
                                   </div>
                                   <div class="card-action">
-                                    <a href="#" id="playlist-two-link">This is a link</a>
-                                    <a href="#">This is a link</a>
+                                    <a href="#" id="playlist-two-link" target="_blank">Spotify Link</a>
+                                    
                                   </div>
                                 </div>
                               </div>
                               <div class="col s4 m4">
                                 <div class="card blue-grey darken-1">
+                                  <div class="card-image">
+                                    <img id="playlist-three-image">
+                                  </div>
                                   <div class="card-content white-text" id="playlist3">
                                     <span class="card-title" id="playlist-three-title">Playlist#3</span>
-                                    <p id="playlist-three-desc">I am a very simple card. I am good at containing small bits of information.
-                                    I am convenient because I require little markup to use effectively.</p>
+                                    <p id="playlist-three-desc"></p>
                                   </div>
                                   <div class="card-action">
-                                    <a href="#" id="playlist-three-link">This is a link</a>
-                                    <a href="#">This is a link</a>
+                                    <a href="#" id="playlist-three-link" target="_blank">Spotify Link</a>
+                                    
                                   </div>
                                 </div>
                               </div>
