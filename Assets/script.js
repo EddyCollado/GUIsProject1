@@ -71,6 +71,8 @@ $( document ).ready(function() {
 
     mixButton.on("click",function(){
         getAuthorizationToken();
+        var selected = $("#form-options").val();
+        console.log("item selected",selected);
         console.log("this");
         
     $.ajax({
