@@ -20,9 +20,40 @@ p {
     padding-top: 0px;
 }
 
+#title {
+    font-size: 300%;
+    font-weight: bold;
+}
+
+#cocktail-list {
+    padding-top: 1%;
+}
+
 #cocktail-recipe{
     color: black;
 }
 .ingredient {
     color: black
+}
+
+#party-name {
+    color: white;
+    font-weight: bold;
+    font-size: 200%;
+}
+
+#cocktail-title {
+    font-weight: bold;
+}
+
+#playlist-one-title {
+    font-weight: bold;
+}
+
+#playlist-two-title {
+    font-weight: bold;
+}
+
+#playlist-three-title {
+    font-weight: bold;
 }
