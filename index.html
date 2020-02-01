@@ -1,199 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="Assets/style.css">
-</head>
-<body>
-     <!-- Navbar goes here -->
-     <header>
-     <nav class="nav-extended">
-       <div class="nav-wrapper">
-          <span class="nav-title">Cocktail Mixtape</span>
-        </div>
-      </nav>
-    </header>
-    <!-- Page Layout here -->
-    <main>
-      <div id="modal" class="modal">
-        <div class="modal-content">
-          <div class="col s6 center-align">
-            <a class="modal-action modal-close waves-effect waves-green btn-flat">
-              <button class="btn waves-effect waves-light" id="spotify-auth">First, Click Here to Authorize Spotify</button>
-            </a>
-              </div>
-        </div>
-        <div class="modal-footer center-align">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="Assets/style.css">
+</head>
+
+<body>
+  <!-- Navbar goes here -->
+  <header>
+    <nav class="nav-extended">
+      <div class="nav-wrapper">
+        <span class="nav-title">Cocktail Mixtape</span>
+      </div>
+    </nav>
+  </header>
+  <!-- Page Layout here -->
+  <main>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="col s6 center-align">
+          <a class="modal-action modal-close waves-effect waves-green btn-flat">
+            <button class="btn waves-effect waves-light" id="spotify-auth">First, Click Here to Authorize
+              Spotify</button>
+          </a>
         </div>
+      </div>
+      <div class="modal-footer center-align">
+
+      </div>
     </div>
     <div class="row">
-      <div class="col xs12 s12 m4 offset-m4" id="search-card">
+      <div class="col xs12 s12 m4 l6 offset-l3" id="search-card">
         <!-- Grey navigation panel -->
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
 
             <span class="card-title">So, what are you in the mood for?</span>
             <div id="search-nav">
-            <form>
-              <div class="row">
-                <div class="input-field col s12 ">
-                  <select id="form-options">
-                    <option value="" disabled selected>Choose your party style</option>
+              <form>
+                <div class="row">
+                  <div class="input-field col s12 ">
+                    <select id="form-options">
+                      <option value="" disabled selected>Choose your party style</option>
 
-                    <option value="0" id="hoe-down">Hoe Down</option>
-                    <option value="1" id="tot-rad">Totally Radical</option>
-                    <option value="2" id="geek">Geek Night</option>
-                    <option value="3" id="basic-bitch">Basic Bitch</option>
-                    <option value="4" id="pre-game">Pre-Gaming</option>
-                    <option value="5" id="night-in">Night-in</option>
-                    <option value="6" id="porch-sit">Porch Sitting</option>
-                    <option value="7" id="dumped">So Ya Got Dumped</option>
-                    <option value="8" id="coding">Mad Coding</option>
-                    <option value="9" id="minecraft">Mine All Day</option>
-                    <option value="10" id="hungover">Hungover AF</option>
-                    <option value="11" id="bbq">Summer BBQ</option>
-                    <option value="12" id="rager">Frat Party</option>
-                    <option value="13" id="girls">Guy's Night</option>
-                    <option value="14" id="dungeons">Dungeons & Dragons</option>
-                    <option value="15" id="guys">Girl's Night</option>
-                    <option value="16" id="lonely">Party of 1</option>
+                      <option value="0" id="hoe-down">Hoe Down</option>
+                      <option value="1" id="tot-rad">Totally Radical</option>
+                      <option value="2" id="geek">Geek Night</option>
+                      <option value="3" id="basic-bitch">Basic Bitch</option>
+                      <option value="4" id="pre-game">Pre-Gaming</option>
+                      <option value="5" id="night-in">Night-in</option>
+                      <option value="6" id="porch-sit">Porch Sitting</option>
+                      <option value="7" id="dumped">So Ya Got Dumped</option>
+                      <option value="8" id="coding">Mad Coding</option>
+                      <option value="9" id="minecraft">Mine All Day</option>
+                      <option value="10" id="hungover">Hungover AF</option>
+                      <option value="11" id="bbq">Summer BBQ</option>
+                      <option value="12" id="rager">Frat Party</option>
+                      <option value="13" id="girls">Guy's Night</option>
+                      <option value="14" id="dungeons">Dungeons & Dragons</option>
+                      <option value="15" id="guys">Girl's Night</option>
+                      <option value="16" id="lonely">Party of 1</option>
 
-                  </select>
-                  <label>Pick your party!</label>
+                    </select>
+                    <label>Pick your party!</label>
+                  </div>
+                </div>
+                <a class="waves-effect waves-light btn-large" id="mix-button"><i
+                    class="material-icons left">MIX!</i></a>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="theme-input" type="text" class="validate">
+                    <label for="theme">You can also enter a theme or genre</label>
+                  </div>
+                </div>
+                <a class="waves-effect waves-light btn-large"><i class="material-icons left"
+                    id="random-button">RANDOM!</i></a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col xs12 s12 m12 l9">
+        <div class="show-on-small-only" class="left">
+          <!-- Teal page content  -->
+          <div id="container">
+            <div class="row">
+              <div class="col xs12 s12">
+                <div class="card blue-grey darken-1 hide" id="response-area">
+                  <div class="center-align">
+                    <span class="card-title" id="party-name">Card Title</span>
+                  </div>
+                  <div class="card-content white-text hide" id="recipe-card">
+                    <div class="card col xs12 s12 m6 offset-m3" id="cocktail-list">
+                      <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" id="cocktail-image">
+                      </div>
+                      <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4" id="cocktail-title"><i
+                            class="material-icons right"></i></span>
+                        <p><a id="drink-glass"></a></p>
+                      </div>
+                      <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4" id="cocktail-name">Recipe<i
+                            class="material-icons right">close</i></span>
+                        <ul class="collection" id="recipe-list">
+                        </ul>
+                        <p id="cocktail-recipe"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+
+                  <br>
+                  <div class="card-content white-text hide" id="playlist-cards">
+                    <div class="row">
+                      <div class="row">
+                        <div class="col xs12 s12 m4 offset-m4">
+                          <div class="card blue-grey darken-1">
+                            <div class="card-image">
+                              <img id="playlist-one-image">
+                            </div>
+                            <div class="card-content white-text" id="playlist1">
+                              <span class="card-title" id="playlist-one-title">Playlist#1</span>
+                              <p id="playlist-one-desc">
+                              </div>
+                            <div class="card-action">
+                              <a href="#" id="playlist-one-link" target="_blank">Spotify Link</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col xs12 s12 m4 offset-m4">
+                          <div class="card blue-grey darken-1">
+                            <div class="card-image">
+                              <img id="playlist-two-image">
+                            </div>
+                            <div class="card-content white-text" id="playlist2">
+                              <span class="card-title" id="playlist-two-title">Playlist#2</span>
+                              <p id="playlist-two-desc"></p>
+                            </div>
+                            <div class="card-action">
+                              <a href="#" id="playlist-two-link" target="_blank">Spotify Link</a>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col xs12 s12 m4 offset-m4">
+                          <div class="card blue-grey darken-1">
+                            <div class="card-image">
+                              <img id="playlist-three-image">
+                            </div>
+                            <div class="card-content white-text" id="playlist3">
+                              <span class="card-title" id="playlist-three-title">Playlist#3</span>
+                              <p id="playlist-three-desc"></p>
+                            </div>
+                            <div class="card-action">
+                              <a href="#" id="playlist-three-link" target="_blank">Spotify Link</a>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <br>
+                  <br>
+                  <br>
                 </div>
               </div>
-              <a class="waves-effect waves-light btn-large" id="mix-button"><i class="material-icons left">MIX!</i></a>  
-              <div class="row">
-              <div class="input-field col s12">
-                <input id="theme-input" type="text" class="validate">
-                <label for="theme">You can also enter a theme or genre</label>
-              </div>
             </div>
-              <a class="waves-effect waves-light btn-large"><i class="material-icons left" id="random-button">RANDOM!</i></a>      
-            </form>
           </div>
         </div>
       </div>
     </div>
-    
-          
-          <div class="col xs12 s12 m9 l9">
-            <div class="show-on-small-only" class="left">
-            <!-- Teal page content  -->
-            <div id="container">
-              <div class="row">
-                  <div class="col s12">
-                    <div class="card blue-grey darken-1 hide" id="response-area">
-                      <div class="center-align">
-                      <span class="card-title" id="party-name">Card Title</span>
-                      </div>
-                      <div class="card-content white-text hide" id="recipe-card">
-                        <div class="card col s12 m6 offset-m3" id="cocktail-list">
-                          <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" id="cocktail-image">
-                          </div>
-                          <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4" id="cocktail-title"><i class="material-icons right"></i></span>
-                            <p><a id="drink-glass"></a></p>
-                          </div>
-                          <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4" id="cocktail-name">Recipe<i class="material-icons right">close</i></span>
-                              <ul class="collection" id="recipe-list">
-                            </ul>
-                            <p id="cocktail-recipe"></p>
-                          </div>
-                        </div>
-                      </div>
-                      <br>
-                    
-                        <br>
-                        <div class="card-content white-text hide" id="playlist-cards">
-                          <div class="row">
-                            <div class="row">
-                            <div class="col xs12 s12 m4 offset-m4">
-                              <div class="card blue-grey darken-1">
-                                <div class="card-image">
-                                  <img id="playlist-one-image">
-                                </div>
-                                <div class="card-content white-text" id="playlist1">
-                                  <span class="card-title" id="playlist-one-title">Playlist#1</span>
-                                  <p id="playlist-one-desc">I am a very simple card. I am good at containing small bits of information.
-                                  I am convenient because I require little markup to use effectively.</p>
-                                </div>
-                                <div class="card-action">
-                                  <a href="#" id="playlist-one-link" target="_blank">Spotify Link</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col xs12 s12 m4 offset-m4">
-                              <div class="card blue-grey darken-1">
-                                <div class="card-image">
-                                  <img id="playlist-two-image">
-                                </div>
-                                <div class="card-content white-text" id="playlist2">
-                                  <span class="card-title" id="playlist-two-title">Playlist#2</span>
-                                  <p id="playlist-two-desc"></p>
-                                </div>
-                                <div class="card-action">
-                                  <a href="#" id="playlist-two-link" target="_blank">Spotify Link</a>
-                                  
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col xs12 s12 m4 offset-m4">
-                              <div class="card blue-grey darken-1">
-                                <div class="card-image">
-                                  <img id="playlist-three-image">
-                                </div>
-                                <div class="card-content white-text" id="playlist3">
-                                  <span class="card-title" id="playlist-three-title">Playlist#3</span>
-                                  <p id="playlist-three-desc"></p>
-                                </div>
-                                <div class="card-action">
-                                  <a href="#" id="playlist-three-link" target="_blank">Spotify Link</a>
-                                  
-                                </div>
-                              </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-  
-                        <br>
-                        <br>
-                        <br>
-                      </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-          </div>
-        </div>
-      </main>
-        <footer class="page-footer">
-          <div class="footer-copyright">
-            <div class="container">
-            © 2020 Copyright The GUIs
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-          </div>
-        </footer>
-  
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <script src="Assets/script.js"></script>
-  
-  </body>
-  </html>
+  </main>
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container center-align">
+        © 2020 Copyright The GUIs
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="Assets/script.js"></script>
+
+</body>
+
+</html>

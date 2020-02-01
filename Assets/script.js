@@ -111,7 +111,7 @@ $( document ).ready(function() {
         recipeCard.attr("class","card-content white-text");
         playlistCards.attr("class","card-content white-text");
         responseArea.attr("class","card blue-grey darken-1");
-        searchCard.attr("class", "col s3");
+        searchCard.attr("class", "col xs12 s12 m4 l3");
 
         partyName.text(partyObject[selected].name);
 
@@ -191,7 +191,7 @@ $( document ).ready(function() {
         recipeCard.attr("class","card-content white-text");
         playlistCards.attr("class","card-content white-text");
         responseArea.attr("class","card blue-grey darken-1");
-        searchCard.attr("class", "col s3");
+        searchCard.attr("class", "col xs12 s12 m4 l3");
 
         $.ajax({
             url: "https://api.spotify.com/v1/search?q="+spotifyQuery+"&type="+spotifyCat,

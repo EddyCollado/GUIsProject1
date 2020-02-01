@@ -78,17 +78,24 @@ p {
     font-weight: bold;
 }
 
-@media screen and ( max-height: 750px ){
 
 
-  div #search-card  {
-    column-width: 100%;
-  }
+@media screen and ( max-width: 992px ){
+
 
  #search-card {
      width: 100%;
  }  
 
+ #response-area {
+     width: 100%;
+ }
+
 }
+
+   
+   
+
+
 
 
