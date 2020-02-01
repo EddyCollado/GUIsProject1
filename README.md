@@ -7,9 +7,11 @@ Pick from a list or enter in a keyword for random suggestions!
 ## Getting Started
 
 Clone repository on local computer using GitBash or Terminal.
-	1) git clone https://github.com/PhatOrbs/GUIsProject1.git 
+1) git clone https://github.com/PhatOrbs/GUIsProject1.git 
+
 You will need access to Spotify to use the playlist feature.
-	1) Link to sign-up for Spotify: https://www.spotify.com
+1) Link to sign-up for Spotify: https://www.spotify.com
+
 Authorize Spotify when prompted after opening app.
 
 
