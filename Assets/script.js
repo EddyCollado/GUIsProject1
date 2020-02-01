@@ -4,9 +4,10 @@ $( document ).ready(function() {
     $("#modal").modal('open');
 
     var partyObject =[
-        {name: "Hoe Down", keyword: ["country","honky tonk","country pop"], drink: "ACID"},
+
+        {name: "Hoe Down", keyword: ["country","honky tonk","country pop"], drink: "kentucky b and b"},
         {name: "Totally Radical", keyword:["80s","80s pop","new wave"], drink: "city slicker"},
-        {name: "Geek Night", keyword:["video games","anime","gaming"], drink: "grim reaper"},
+        {name: "Geek Night", keyword:["video games","anime","gaming"], drink: "green goblin"},
         {name: "Basic Bitch", keyword:["usa top 40","divas","dance hits"], drink: "cosmopolitan"},
         {name: "Pre-Gaming", keyword:["usa top 40", "pre game","party"], drink: "jello shots"},
         {name: "Night-in", keyword:["chill","relax","classic acoustic"], drink: "whisky mac"},
@@ -21,6 +22,14 @@ $( document ).ready(function() {
         {name: "Dungeons & Dragons", keyword:["lord of the rings","adventure","fantasy"],drink: "gideon's green dinosaur"},
         {name: "Girls Night", keyword:["girl","pop","club"],drink: "champagne cocktail"},
         {name: "Party of 1", keyword:["lonely","sad","quiet"],drink: "long vodka"},
+        {name: "Christmas", keyword:["christmas","holiday","winter"],drink: "sherry eggnog"},
+        {name: "New Year Blackout", keyword:["new year","party","dance"],drink: "manhattan"},
+        {name: "Spooky Season", keyword:["halloween","spooky","witchy"],drink: "halloween punch"},
+        {name: "Prohibition Inebriation", keyword:["20s","ragtime","prohibition"],drink: "bee's knees"},
+        {name: "V-Day", keyword:["valentine's","love","gettin it on"],drink: "affair"},
+        {name: "Sitting by the Fire", keyword:["cozy","relaxing","chill"],drink: "rum toddy"},
+        {name: "Poker Night", keyword:["poker night","hits","gambling"],drink: "casino"},    
+    
     ]
     
     var clientId = "332c5e1a03234f338379231dadc0809c";
