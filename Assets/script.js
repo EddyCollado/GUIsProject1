@@ -1,5 +1,7 @@
 $( document ).ready(function() {
     $('select').formSelect();
+    $("#modal").modal();
+    $("#modal").modal('open');
 
     var partyObject =[
         {name: "Hoe Down", keyword: ["country","honky tonk","country pop"], drink: "ACID"},

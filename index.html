@@ -21,6 +21,17 @@
     </header>
     <!-- Page Layout here -->
     <main>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><div class="col s12">
+            <button class="btn waves-effect waves-light" id="spotify-auth">First, Click Here to Authorize Spotify</button>
+            </div>
+        </div></a>
+    </div>
     <div class="row">
         <div class="col s4 offset-s4" id="search-card">
           <!-- Grey navigation panel -->
@@ -57,7 +68,7 @@
                     <label>Pick your party!</label>
                   </div>
                 </div>
-                <a class="waves-effect waves-light btn-large"><i class="material-icons left" id="mix-button">MIX!</i></a>  
+                <a class="waves-effect waves-light btn-large" id="mix-button"><i class="material-icons left">MIX!</i></a>  
                 <div class="row">
                 <div class="input-field col s12">
                   <input id="theme-input" type="text" class="validate">
@@ -68,9 +79,6 @@
               </form>
             </div>
           </div>
-        </div>
-        <div class="col s12">
-        <button class="btn waves-effect waves-light" id="spotify-auth">First, Click Here to Authorize Spotify</button>
         </div>
       </div>
       
