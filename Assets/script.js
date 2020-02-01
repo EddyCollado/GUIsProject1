@@ -112,6 +112,7 @@ $( document ).ready(function() {
         playlistCards.attr("class","card-content white-text");
         responseArea.attr("class","card blue-grey darken-1");
         searchCard.attr("class", "col s3");
+
         partyName.text(partyObject[selected].name);
 
         

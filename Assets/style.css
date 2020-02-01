@@ -14,6 +14,8 @@ p {
 }
 .nav-wrapper {
     background-color: rgb(85, 84, 84);
+    text-align: center;
+    padding-bottom: 10px;
 }
 .page-footer {
     background-color: rgb(85, 84, 84);
@@ -75,3 +77,18 @@ p {
 #playlist-three-title {
     font-weight: bold;
 }
+
+@media screen and ( max-height: 750px ){
+
+
+  div #search-card  {
+    column-width: 100%;
+  }
+
+ #search-card {
+     width: 100%;
+ }  
+
+}
+
+
