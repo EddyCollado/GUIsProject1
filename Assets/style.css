@@ -17,7 +17,10 @@ p {
 }
 .page-footer {
     background-color: rgb(85, 84, 84);
+    bottom: 0;
     padding-top: 0px;
+    position: bottom;
+    width: 100%;
 }
 
 #title {
@@ -29,9 +32,10 @@ p {
     padding-top: 1%;
 }
 
-#cocktail-recipe{
+#cocktail-recipe {
     color: black;
 }
+
 .ingredient {
     color: black
 }

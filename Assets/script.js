@@ -55,6 +55,9 @@ $( document ).ready(function() {
     var recipeList = $("#recipe-list");
     var responseArea =$("#response-area");
     var partyName =$("#party-name");
+    var searchCard = $("#search-card");
+
+
 
     function authTokenLink(){
         var spotifyAuthLink = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=` + encodeURIComponent(scope) + '&redirect_uri=' + redirectUri;
@@ -93,6 +96,7 @@ $( document ).ready(function() {
         recipeCard.attr("class","card-content white-text");
         playlistCards.attr("class","card-content white-text");
         responseArea.attr("class","card blue-grey darken-1");
+        searchCard.attr("class", "col s3");
         partyName.text(partyObject[selected].name);
 
         
