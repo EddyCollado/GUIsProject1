@@ -14,7 +14,7 @@ $( document ).ready(function() {
         {name: "Mine All Day", keyword:["minecraft","gaming","chiptune"], drink: "limeade"},
         {name: "Hungover AF", keyword:["meditation", "relaxation","ambient"], drink: "corpse reviver #2"},
         {name: "Summer BBQ", keyword:["bbq","4th of july","america"], drink: "Ice Pick #1"},
-        {name: "Frat Party", keyword:["workout","bro","frat"], drink: "cherry electric lemonade"},
+        {name: "Frat Party", keyword:["workout","drinking","frat"], drink: "cherry electric lemonade"},
         {name: "Guys Night", keyword:["sports","pump up","cigars"], drink: "Gentleman's Club"},
         {name: "Dungeons & Dragons", keyword:["lord of the rings","adventure","fantasy"],drink: "gideon's green dinosaur"},
         {name: "Girls Night", keyword:["girl","pop","club"],drink: "champagne cocktail"},
@@ -56,6 +56,8 @@ $( document ).ready(function() {
     var responseArea =$("#response-area");
     var partyName =$("#party-name");
     var searchCard = $("#search-card");
+    var randomButton =$("#random-button");
+    var themeInput =$("#theme-input");
 
 
 
@@ -74,8 +76,19 @@ $( document ).ready(function() {
 
     
     };
-
-
+    function disableAuth(){
+        if (authorizationToken !== "Bearer "){
+            spotAuth.addClass('disabled');
+            spotAuth.text("Authorized");
+            console.log("this");
+        } else { 
+            spotAuth.attr("src","btn waves-effect waves-light");
+            console.log("that");
+        };
+    };
+    getAuthorizationToken();
+    disableAuth();
+    
     spotAuth.on("click", function(event){
         event.preventDefault();
         authTokenLink()});
@@ -85,7 +98,7 @@ $( document ).ready(function() {
         event.preventDefault();
         getAuthorizationToken();
         recipeList.empty();
-        spotAuth.attr("class","btn waves-effect waves-light hide")
+        spotAuth.attr("class","btn waves-effect waves-light hide");
         var selected = parseInt($("#form-options").val());
         var randomNumber = Math.floor(Math.random()*3);
         console.log(randomNumber);
@@ -140,6 +153,7 @@ $( document ).ready(function() {
         cocktailRecipe.text(response.drinks[0].strInstructions);
         var imageSrc = response.drinks[0].strDrinkThumb;
         cocktailImage.attr("src", imageSrc);
+
         
         for (i=1; i<15 ; i++ ) {
             var stringIndex = "strIngredient"+i;
@@ -163,6 +177,76 @@ $( document ).ready(function() {
 
     });
 
+    randomButton.on("click",function(event){
+        event.preventDefault();
+        getAuthorizationToken();
+        recipeList.empty();
+        spotAuth.attr("class","btn waves-effect waves-light hide");
+        var spotifyQuery = themeInput.val();
+        var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+        partyName.text(themeInput.val());
+        recipeCard.attr("class","card-content white-text");
+        playlistCards.attr("class","card-content white-text");
+        responseArea.attr("class","card blue-grey darken-1");
+        searchCard.attr("class", "col s3");
+
+        $.ajax({
+            url: "https://api.spotify.com/v1/search?q="+spotifyQuery+"&type="+spotifyCat,
+            type: 'GET',
+            headers: {
+                'Authorization' :  authorizationToken
+            },
+            success: function(data) {
+                console.log(data);
+                var imageOne = data.playlists.items[0].images[0].url
+                var hrefOne = data.playlists.items[0].external_urls.spotify
+                playlistOneTitle.text(data.playlists.items[0].name);
+                playlistOneImage.attr("src",imageOne);
+                playlistOneLink.attr("href",hrefOne);
+                playlistOneDesc.text(data.playlists.items[0].description);
+                var imageTwo = data.playlists.items[1].images[0].url
+                var hrefTwo = data.playlists.items[1].external_urls.spotify
+                playlistTwoTitle.text(data.playlists.items[1].name);
+                playlistTwoImage.attr("src",imageTwo);
+                playlistTwoLink.attr("href",hrefTwo);
+                playlistTwoDesc.text(data.playlists.items[1].description);
+                var imageThree = data.playlists.items[2].images[0].url
+                var hrefThree = data.playlists.items[2].external_urls.spotify
+                playlistThreeTitle.text(data.playlists.items[2].name);
+                playlistThreeImage.attr("src",imageThree);
+                playlistThreeLink.attr("href",hrefThree);
+                playlistThreeDesc.text(data.playlists.items[2].description);
+            }
+        });
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response){
+            console.log(response);
+            cocktailTitle.text(response.drinks[0].strDrink);
+            drinkGlass.text(response.drinks[0].strGlass);
+            cocktailRecipe.text(response.drinks[0].strInstructions);
+            var imageSrc = response.drinks[0].strDrinkThumb;
+            cocktailImage.attr("src", imageSrc);
+            
+            for (i=1; i<15 ; i++ ) {
+                var stringIndex = "strIngredient"+i;
+                var stringAmount = "strMeasure"+i;
+                var drinksListObject = response.drinks[0];
+                console.log(stringIndex)
+                console.log(drinksListObject[stringIndex])
+                if (drinksListObject[stringIndex] !== null){
+                var newIngredient = $("<li>");
+                var ingredientClass = "collection-item ingredient";
+                recipeList.append(newIngredient);
+                newIngredient.attr("class",ingredientClass);
+                newIngredient.text(response.drinks[0][stringIndex]+":       "+response.drinks[0][stringAmount]);
+                };
+            };
+    
+    
+        });
+    });
 
     
     
