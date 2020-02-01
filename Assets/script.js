@@ -81,7 +81,7 @@ $( document ).ready(function() {
     function disableAuth(){
         if (authorizationToken !== "Bearer "){
             spotAuth.addClass('disabled');
-            spotAuth.text("Authorized");
+            spotAuth.text("Close");
             console.log("this");
         } else { 
             spotAuth.attr("src","btn waves-effect waves-light");
