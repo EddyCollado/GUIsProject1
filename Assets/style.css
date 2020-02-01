@@ -46,8 +46,22 @@ p {
     font-size: 200%;
 }
 
+#cocktail-image {
+
+}
+
 #cocktail-title {
     font-weight: bold;
+    color: darkblue!important;
+}
+
+#cocktail-title:hover {
+    color: cornflowerblue!important;
+}
+
+
+#drink-glass {
+    color: black;
 }
 
 #playlist-one-title {
