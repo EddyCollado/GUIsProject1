@@ -48,9 +48,51 @@ p {
     font-size: 200%;
 }
 
-#cocktail-image {
+#main-overlay {
+    width: 100%;
+  }
+  
+  .activator {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 
-}
+  .activator:hover {
+      opacity: 0.4;
+      transition: .5s ease;
+  }
+  
+  .overlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(221, 221, 221);
+  }
+  
+  #main-overlay:hover .overlay {
+    opacity: 1;
+  }
+  
+  .text-overlay {
+    color: black;
+    opacity: 0.4;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
 
 #cocktail-title {
     font-weight: bold;
@@ -91,10 +133,18 @@ p {
      width: 100%;
  }
 
-}
+ #cocktail-list {
+     padding-top: 10px;
+ }
 
-   
-   
+}
+@media screen and ( min-width: 993px ) {
+
+    .playlist-cards {
+        float: left;
+    }
+
+}
 
 
 
