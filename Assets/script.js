@@ -28,8 +28,10 @@ $( document ).ready(function() {
         {name: "Prohibition Inebriation", keyword:["20s","ragtime","prohibition"],drink: "bee's knees"},
         {name: "V-Day", keyword:["valentine's","love","gettin it on"],drink: "affair"},
         {name: "Sitting by the Fire", keyword:["cozy","relaxing","chill"],drink: "rum toddy"},
-        {name: "Poker Night", keyword:["poker night","hits","gambling"],drink: "casino"},    
-    
+        {name: "Poker Night", keyword:["poker night","hits","gambling"],drink: "casino"},
+		{name: "Drunks Who Brunch", keyword:["brunch","cafe","morning"],drink: "bloody maria"},
+        {name: "Feelin' Fall", keyword:["autumn","cold weather","sweater"],drink: "hunter's moon"},
+        {name: "I'm a Diva", keyword:["diva","fancy","expensive"],drink: "royal bitch"},    
     ]
     
     var clientId = "332c5e1a03234f338379231dadc0809c";
