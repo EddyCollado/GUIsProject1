@@ -3,6 +3,7 @@
 Cocktail Mixtape is an app to pair cocktails and music to your party style.
 Pick from a list or enter in a keyword for random suggestions!
 
+![](cocktail_mixtape1.gif)
 
 ## Getting Started
 
